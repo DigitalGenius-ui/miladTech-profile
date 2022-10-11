@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import MainPage from './pages/MainPage';
+import React, { useEffect, useState } from 'react';
+import Loading from './components/progress/Loading';
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setInterval(() => {
+      setLoading(false)
+      setOpen(true);
+    }, 2000);
+  },[]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Container>
+        {open && <MainPage/>}
+        {loading && <Loading/>}
+      </Container>
   );
 }
 
 export default App;
+
+const Container = styled.div`
+  padding: 1rem;
+`
