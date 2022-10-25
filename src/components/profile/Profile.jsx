@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Profile = () => {
   return (
     <Container>
-        <Image src="https://res.cloudinary.com/ghazni/image/upload/v1646637426/m_jvhkfn.jpg"/>
+        <Image src="https://res.cloudinary.com/ghazni/image/upload/v1666661220/302157978_3136967376613883_3283345779208009464_n_tdwrjd.jpg"/>
         <Text>
             <h1>Milad Amiri</h1>
             <p>Front-End Web developer</p>
